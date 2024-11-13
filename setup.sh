@@ -6,11 +6,15 @@ if ! command -v git &> /dev/null; then
 fi
 
 if [ ! -d $HOME/personal ]; then
-    mkdir $HOME/personal
+    mkdir $HOME/Desktop/personal
 fi
 
-git clone https://github.com/ShadowFlade/dev_setup $HOME/personal/dev_setup
+git clone https://github.com/ShadowFlade/dev_setup $HOME/Desktop/personal/dev_setup
 
-pushd $HOME/personal/dev_setup
-./run
+pushd $HOME/Desktop/personal/dev_setup
+./run.sh
+popd
+
+pushd $HOME/Desktop/personal/dev_setup
+./links.sh
 popd
