@@ -9,7 +9,6 @@ pushd /tmp/go1.23.3.linux-amd64
     wget --output-document /tmp/golang.tar.gz https://go.dev/dl/go1.23.3.linux-amd64.tar.gz
     tar zxpf /tmp/golang.tar.gz -C /tmp
     cd
-    ./configure && make && sudo make install
 )
 popd
 
