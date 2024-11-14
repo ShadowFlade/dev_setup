@@ -1,18 +1,21 @@
 #!/usr/bin/env bash
 
-if [ ! -d /etc/i3 ]; then
-    ln -s $HOME/personal/dotfiles/i3 /etc/i3
-fi
+
+sudo rm -rf /etc/i3 &> /dev/null
+sudo ln -s $HOME/Desktop/personal/dotfiles/i3 /etc/i3
 
 
 if [ ! -d $HOME/.local/share/applications ]; then
-    mkdir -p $HOME/.local/share/applications;
-    ln -s $HOME/personal/dotfiles/.desktop/obsidian.desktop $HOME/.local/share/applications/
+    sudo mkdir -p $HOME/.local/share/applications
 fi
+sudo rm $HOME/.local/share/applications/obsidian.desktop &> /dev/null
+sudo ln -s $HOME/Desktop/personal/dotfiles/.desktop/obsidian.desktop $HOME/.local/share/applications/obsidian.desktop &> /dev/null
 
-if [ ! -d /etc/nvim]; then
-    ln -s $HOME/Desktop/personal/dotfiles/nvim /etc/nvim
-fi
+sudo rm -rf /etc/nvim &> /dev/null
+sudo  ln -s $HOME/Desktop/personal/dotfiles/nvim /etc/nvim
 
-ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh/.zshrc $HOME/.zshrc
-ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh/ $HOME/oh-my-zsh
+
+sudo rm $HOME/.zshrc &> /dev/null
+sudo ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh/.zshrc $HOME/.zshrc
+sudo rm -rf $HOME/oh-my-zsh/ &> /dev/null
+sudo ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh/ $HOME/oh-my-zsh

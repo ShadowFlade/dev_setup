@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
+echo 'Running run.sh'
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 grep=""
@@ -24,7 +25,8 @@ log() {
 
 log "RUN: env: $env -- grep: $grep"
 
-runs_dir=`find $script_dir/runs -mindepth 1 -maxdepth 1 -executable`
+runs_dir=`find $script_dir/runs -mindepth 1 -maxdepth 1`
+echo $script_dir
 
 for s in $runs_dir; do
     if echo "$s" | grep -vq "$grep"; then
@@ -35,7 +37,7 @@ for s in $runs_dir; do
     log "running script: $s"
 
     if [[ $dry_run == "0" ]]; then
-        $s
+        /bin/bash $s
     fi
 done
 
