@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash/
 sudo apt -y update
 
 if ! command -v git &> /dev/null; then
@@ -10,11 +10,15 @@ if [ ! -d $HOME/personal ]; then
 fi
 
 git clone https://github.com/ShadowFlade/dev_setup $HOME/Desktop/personal/dev_setup
+git clone https://github.com/ShadowFlade/dotfiles $HOME/Desktop/personal/dotfiles
+
 
 pushd $HOME/Desktop/personal/dev_setup
-./run.sh
+chmod +x ./run.sh
+/bin/bash ./run.sh
 popd
 
 pushd $HOME/Desktop/personal/dev_setup
-./links.sh
+chmod +x ./links.sh
+/bin/bash ./links.sh
 popd

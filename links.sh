@@ -12,7 +12,9 @@ sudo rm $HOME/.local/share/applications/obsidian.desktop &> /dev/null
 sudo ln -s $HOME/Desktop/personal/dotfiles/.desktop/obsidian.desktop $HOME/.local/share/applications/obsidian.desktop &> /dev/null
 
 sudo rm -rf /etc/nvim &> /dev/null
+sudo rm -rf ~/.config/nvim &> /dev/null
 sudo  ln -s $HOME/Desktop/personal/dotfiles/nvim /etc/nvim
+sudo  ln -s $HOME/Desktop/personal/dotfiles/nvim ~/.config/nvim
 
 
 sudo rm $HOME/.zshrc &> /dev/null
