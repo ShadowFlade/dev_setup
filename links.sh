@@ -17,9 +17,14 @@ sudo  ln -s $HOME/Desktop/personal/dotfiles/nvim ~/.config/nvim
 
 
 sudo rm $HOME/.zshrc &> /dev/null
-sudo rm -rf $HOME/oh-my-zsh/ &> /dev/null
+sudo rm -rf $HOME/oh-my-zsh &> /dev/null
+sudo ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh $HOME/oh-my-zsh
 sudo ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh/.zshrc $HOME/.zshrc
-sudo ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh/ $HOME/oh-my-zsh
+sudo rm -rf $HOME/.oh-my-zsh/custom &> /dev/null
+sudo ln -s $HOME/Desktop/personal/dotfiles/oh-my-zsh/custom $HOME/.oh-my-zsh/custom
+sudo rm -f $HOME/.bash_profile
+sudo ln -s $HOME/Desktop/personal/dotfiles/.bash_profile ~/.bash_profile
+
 
 if [ ! -d $HOME/Pictures/personal ]; then
     sudo mkdir -p $HOME/Pictures/personal
@@ -38,3 +43,9 @@ sudo rm -f ~/.tmux.conf
 sudo rm -f ~/tmux.conf
 sudo ln -s ~/Desktop/personal/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 sudo ln -s ~/Desktop/personal/dotfiles/tmux/.tmux.conf ~/tmux.conf
+sudo rm -f $HOME/.local/bin/scripts/tmux-sessionizer &> /dev/null
+
+if [ ! -d $HOME/.local/bin/scripts/tmux-sessionizer ]; then
+    sudo mkdir -p $HOME/.local/bin/scripts
+fi
+sudo ln -s $HOME/Desktop/personal/dotfiles/tmux/scripts/tmux-sessionizer $HOME/.local/bin/scripts/tmux-sessionizer

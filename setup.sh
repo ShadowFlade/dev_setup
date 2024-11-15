@@ -5,8 +5,11 @@ if ! command -v git &> /dev/null; then
     sudo apt -y install git
 fi
 
-if [ ! -d $HOME/personal ]; then
+if [ ! -d $HOME/Desktop/personal ]; then
     mkdir $HOME/Desktop/personal
+fi
+if [ ! -d $HOME/Desktop/work ]; then
+    mkdir $HOME/Desktop/work
 fi
 
 git clone https://github.com/ShadowFlade/dev_setup $HOME/Desktop/personal/dev_setup
