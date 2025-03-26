@@ -31,6 +31,7 @@ if [ ! -d $HOME/Pictures/personal ]; then
 fi
 
 sudo rm -rf ~/Pictures/personal/wallpaper
+mkdir -p ~/Pictures/personal/wallpaper
 sudo ln -s ~/Desktop/personal/dotfiles/wallpaper ~/Pictures/personal/wallpaper
 
 if [ ! -d $HOME/.config ]; then
@@ -45,7 +46,7 @@ sudo ln -s ~/Desktop/personal/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 sudo ln -s ~/Desktop/personal/dotfiles/tmux/.tmux.conf ~/tmux.conf
 sudo rm -f $HOME/.local/bin/scripts/tmux-sessionizer &> /dev/null
 
-if [ ! -d $HOME/.local/bin/scripts/tmux-sessionizer ]; then
+if [ ! -d $HOME/.local/bin/scripts/ ]; then
     sudo mkdir -p $HOME/.local/bin/scripts
 fi
 sudo ln -s $HOME/Desktop/personal/dotfiles/tmux/scripts/tmux-sessionizer $HOME/.local/bin/scripts/tmux-sessionizer
